@@ -1,4 +1,5 @@
 
+# Sect: 2.3, 3.2
 # Grid Approximation 
 # Globe Tossing Problem
 
@@ -20,5 +21,30 @@ posterior <- unstd.posterior / sum(unstd.posterior)
 
 # plot it
 plot( p_grid, posterior , type = 'b', xlab = "probability of water", ylab = "posterior probability")
+
+# ==================================================
+
+# Sect: 3.3
+# Sampling from the Grid-Approximate Posterior
+# Draw 10K samples 
+samples <- sample( p_grid, prob = posterior, size = 1e4, replace = T )
+
+# plot it
+plot(samples)
+
+# plot a density estimate
+library(rethinking)
+dens(samples)
+
+
+
+
+
+
+
+
+
+
+
 
 
