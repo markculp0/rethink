@@ -9,11 +9,13 @@ p_grid <- seq( from=0, to=1, length.out = 20 )
 # define prior
 prior <- rep(1, 20)
 
-# compute liklihood at each value in grid
+# Compute liklihood at each value in grid;
+# when liklihood of 6 water results fm 9 tosses; 
+# or, the number of ways to get 6 W's in 9 tosses 
+# @ ea p_grid probability of W.
 likelihood <- dbinom(6, size = 9, prob = p_grid)
 
 # compute product of likelihood and prior
-# when 6 out of 9 tosses reveal water
 unstd.posterior <- likelihood * prior
 
 # standardize posterior so it sums to 1
